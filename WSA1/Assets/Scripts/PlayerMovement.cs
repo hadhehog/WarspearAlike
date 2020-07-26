@@ -5,7 +5,9 @@ using UnityEngine;
 public enum PlayerState
 {
     move,
-    attack
+    attack,
+    stagger,
+    idle
 }
 
 public class PlayerMovement : MonoBehaviour
@@ -32,12 +34,15 @@ public class PlayerMovement : MonoBehaviour
         change.Normalize();
         change.x = Input.GetAxisRaw("Horizontal") * Time.deltaTime * speed;
         change.y = Input.GetAxisRaw("Vertical") * Time.deltaTime * speed;
-        if (Input.GetButtonDown("Attack") && currentState != PlayerState.attack)
+        if (Input.GetButtonDown("Attack") && 
+            currentState != PlayerState.attack &&
+                currentState != PlayerState.stagger)
         {
             StartCoroutine(AttackCor());
         }
 
-        else if (currentState == PlayerState.move)
+        else if (currentState == PlayerState.move || 
+            currentState == PlayerState.idle)
         {
             MovementAnimationUpdate();
         }
@@ -67,6 +72,22 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             anim.SetBool("isMoving", false);
+        }
+    }
+
+    public void Knock(float knockTime)
+    {
+        StartCoroutine(KnockCo(knockTime));
+    }
+
+    private IEnumerator KnockCo(float knockTime)
+    {
+        if (rb != null)
+        {
+            yield return new WaitForSeconds(knockTime);
+            rb.velocity = Vector2.zero;
+            currentState = PlayerState.idle;
+            rb.velocity = Vector2.zero;
         }
     }
 }
