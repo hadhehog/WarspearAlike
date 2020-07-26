@@ -21,12 +21,15 @@ public class PlayerMovement : MonoBehaviour
         currentState = PlayerState.move;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        anim.SetFloat("moveX", 0);
+        anim.SetFloat("moveY", -1);
     }
 
     // Update is called once per frame
     void Update()
     {
         change = Vector3.zero;
+        change.Normalize();
         change.x = Input.GetAxisRaw("Horizontal") * Time.deltaTime * speed;
         change.y = Input.GetAxisRaw("Vertical") * Time.deltaTime * speed;
         if (Input.GetButtonDown("Attack") && currentState != PlayerState.attack)
