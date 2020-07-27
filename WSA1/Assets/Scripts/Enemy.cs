@@ -13,11 +13,59 @@ public enum EnemyState
 public class Enemy : MonoBehaviour
 {
 
+    [Header("State Machine")]
     public EnemyState currentState;
-    public int health;
+
+    [Header("Enemy Stats")]
+    public FloatValue maxHealth;
+    public float health;
     public string enemyName;
     public int baseAttack;
     public float moveSpeed;
+    public Vector2 homePosition;
+
+    [Header("Death Effects")]
+    public GameObject deathEffect;
+    private float deathEffectDelay = 1f;
+
+    [Header("Death Signals")]
+    public Signal roomSignal;
+
+    private void Awake()
+    {
+        health = maxHealth.initialValue;
+    }
+
+    private void OnEnable()
+    {
+        transform.position = homePosition;
+        health = maxHealth.initialValue;
+        currentState = EnemyState.idle;
+    }
+
+    private void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            DeathEffect();
+            if (roomSignal != null)
+            {
+                roomSignal.Raise();
+            }
+            this.gameObject.SetActive(false);
+        }
+    }
+
+
+    private void DeathEffect()
+    {
+        if (deathEffect != null)
+        {
+            GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
+            Destroy(effect, deathEffectDelay);
+        }
+    }
 
     public void Knock(Rigidbody2D myRigidbody, float knockTime)
     {
