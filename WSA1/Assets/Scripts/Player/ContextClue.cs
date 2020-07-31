@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ContextClue : MonoBehaviour {
+public class ContextClue : MonoBehaviour
+{
 
     public GameObject contextClue;
     public bool contextActive = false;
@@ -10,10 +11,12 @@ public class ContextClue : MonoBehaviour {
     public void ChangeContext()
     {
         contextActive = !contextActive;
-        if(contextActive)
+        if (contextActive)
         {
             contextClue.SetActive(true);
-        }else{
+        }
+        else
+        {
             contextClue.SetActive(false);
         }
     }

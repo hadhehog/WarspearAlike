@@ -16,10 +16,10 @@ TagManager:
   - 
   - 
   - Enemy
-  - 
-  - 
-  - 
-  - 
+  - Enemy Projectile
+  - Player Projectile
+  - Player
+  - Minimap
   - 
   - 
   - 
