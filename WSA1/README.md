@@ -3,7 +3,8 @@ Like I've already mentioned, it is an old-fashioned, or it would be better to sa
 The main idea and fundamentals were brought by a Warspear.
 
 Briefly, what is Warspear:
-<"Warspear Online is a mobile cross-platform massively multiplayer online role-playing game (MMORPG) by Russian studio AIGRIND LLC. It supports different mobile platforms: iOS, <Android,[1] Windows Mobile, Symbian[2] and Windows based PCs and laptops. First launch of the game was in 2008 and it was based on P2P model, in 2010 it was redesigned. In <March, 2011 an update called Legacy of Berengar was launched. The game became F2P."
+>Warspear Online is a mobile cross-platform massively multiplayer online role-playing game (MMORPG) by Russian studio AIGRIND LLC. It supports different mobile platforms: iOS, >Android, Windows Mobile, Symbian and Windows based PCs and laptops. First launch of the game was in 2008 and it was based on P2P model, in 2010 it was redesigned. 
+>In March, 2011 an update called Legacy of Berengar was launched. The game became F2P
 
 So, I decided to try and accomplish a 1 demo-level of a similar game. But before showing what we've got here, I would like to mention and to give my thanks to user ArMM1998 from opengameart.org, who has created such an amazing piece of artwork!
 ---
@@ -34,7 +35,7 @@ And of course you can recieve greeting from an AI, well... if you will be able t
 
 # About Code
 
-As for code, in my opinion, I've mainly consolidated my knowledge about the State Machine. That's why I entirely agree that this project was quite beneficiary for me,
+As for the code, I've mainly consolidated knowledge about the State Machine. That's why I entirely agree, that this project turned out quite beneficiary for me,
 but to my mind, there is nothing special about the State Machine itself. 
 **Though, I've come up with a really nice piece of code for "The smoothest camera I've ever seen" 
   
