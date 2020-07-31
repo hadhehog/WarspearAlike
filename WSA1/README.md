@@ -37,7 +37,7 @@ And of course you can recieve greeting from an AI, well... if you will be able t
 
 As for the code, I've mainly consolidated knowledge about the State Machine. That's why I entirely agree, that this project turned out quite beneficiary for me,
 but to my mind, there is nothing special about the State Machine itself. 
-**Though, I've come up with a really nice piece of code for "The smoothest camera I've ever seen" 
+**Though, I've come up with a really nice piece of code for "The smoothest camera I've ever seen"** 
   
 ```
 using System.Collections;
